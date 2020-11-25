@@ -10,20 +10,20 @@ public class FeedVO {
     ArrayList<Feeds> feeds;
 
     public class Channel {
-        String name;
-        String field1;
-        String field2;
-        String field3;
-        String created_at;
-        String updated_at;
-        String last_entry_id;
+        public String name;
+        public String field1;
+        public String field2;
+        public String field3;
+        public String created_at;
+        public String updated_at;
+        public String last_entry_id;
     }
 
     public class Feeds {
-        String created_at;
-        String entry_id;
-        String field1;
-        String field2;
-        String field3;
+        public String created_at;
+        public String entry_id;
+        public String field1;
+        public String field2;
+        public String field3;
     }
 }

@@ -23,7 +23,6 @@ import org.json.JSONObject;
 import static org.algosketch.eum.RetrofitFactory.create;
 
 public class MainActivity extends Activity {
-    private static String query = "feeds.json";
     private static String API_KEY = "2A92X87A2NJF3ZPD"; // query ... api key ... &result=2;
     FeedVO feeds;
     TextView textView;
@@ -36,11 +35,14 @@ public class MainActivity extends Activity {
         textView = findViewById(R.id.result_view);
 
         RetrofitService retrofitService = RetrofitFactory.create();
-        retrofitService.getFeeds(query, API_KEY, 2).enqueue(new Callback<FeedVO>() {
+        retrofitService.getFeeds(API_KEY, 2).enqueue(new Callback<FeedVO>() {
             @Override
             public void onResponse(Call<FeedVO> call, Response<FeedVO> response) {
                 if(response.isSuccessful()) {
-                    textView.setText(response.body().toString());
+                    feeds = response.body();
+                    textView.setText(feeds.feeds.get(0).created_at);
+                    textView.setText(textView.getText() + "\n" +feeds.feeds.get(1).created_at);
+                    Log.d("algoi : ", "success");
                 } else {
                     Log.d("algod : ", "fail");
                 }
