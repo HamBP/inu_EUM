@@ -1,13 +1,10 @@
 package org.algosketch.eum;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class FeedVO {
     Channel channel;
-    ArrayList<Feeds> feeds;
+    ArrayList<Feed> feeds;
 
     public class Channel {
         public String name;
@@ -19,7 +16,7 @@ public class FeedVO {
         public String last_entry_id;
     }
 
-    public class Feeds {
+    public class Feed {
         public String created_at;
         public String entry_id;
         public String field1;
