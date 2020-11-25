@@ -13,9 +13,11 @@ import java.util.List;
 
 public class FCMRecyclerAdapter extends RecyclerView.Adapter<FCMRecyclerAdapter.FeedHolder> {
     List<FeedVO.Feed> feeds = new ArrayList<>();
+    List<String> fieldNames = new ArrayList<>();
 
-    FCMRecyclerAdapter(List<FeedVO.Feed> feeds) {
+    FCMRecyclerAdapter(List<FeedVO.Feed> feeds, ArrayList<String> fieldNames) {
         this.feeds = feeds;
+        this.fieldNames = fieldNames;
     }
 
     @NonNull
@@ -27,10 +29,10 @@ public class FCMRecyclerAdapter extends RecyclerView.Adapter<FCMRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull FeedHolder holder, int position) {
-        holder.field1.setText(feeds.get(position).field1);
-        holder.field2.setText(feeds.get(position).field2);
-        holder.field3.setText(feeds.get(position).field3);
-        holder.dataID.setText(feeds.get(position).entry_id);
+        holder.field1.setText(fieldNames.get(0) + " : " + feeds.get(position).field1);
+        holder.field2.setText(fieldNames.get(1) + " : " + feeds.get(position).field2);
+        holder.field3.setText(fieldNames.get(2) + " : " + feeds.get(position).field3);
+        holder.dataID.setText("id : " + feeds.get(position).entry_id);
         holder.date.setText(feeds.get(position).created_at);
     }
 

@@ -18,6 +18,9 @@ import android.widget.TextView;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.algosketch.eum.RetrofitFactory.create;
 
 public class MainActivity extends Activity {
@@ -60,7 +63,13 @@ public class MainActivity extends Activity {
                         titleView.setText(feeds.channel.name);
                         lastUpdateView.setText(feeds.channel.updated_at);
                         // 리스트
-                        FCMRecyclerAdapter adapter = new FCMRecyclerAdapter(feeds.feeds);
+                        ArrayList<String> fieldNames = new ArrayList<>();
+                        fieldNames.add(feeds.channel.field1);
+                        fieldNames.add(feeds.channel.field2);
+                        fieldNames.add(feeds.channel.field3);
+                        int numOfData = feeds.feeds.size();
+                        List<FeedVO.Feed> cutFeeds = feeds.feeds.subList(numOfData-20, numOfData-1);
+                        FCMRecyclerAdapter adapter = new FCMRecyclerAdapter(cutFeeds, fieldNames);
                         recyclerView.setAdapter(adapter);
                     } else {
                         Log.d("algod : ", "fail");
