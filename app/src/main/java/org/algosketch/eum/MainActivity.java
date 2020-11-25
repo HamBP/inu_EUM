@@ -19,8 +19,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+// 준영아 API 관련 문서 만들어라
+
 public class MainActivity extends Activity {
-    private static String API_KEY = "2A92X87A2NJF3ZPD"; // query ... api key ... &result=2;
     FeedVO feeds;
     RecyclerView recyclerView;
     Button updateButton;
@@ -46,7 +47,7 @@ public class MainActivity extends Activity {
     private class UpdateOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            retrofitService.getFeeds(API_KEY, 20).enqueue(new Callback<FeedVO>() {
+            retrofitService.getFeeds(APIKey.API_KEY, 20).enqueue(new Callback<FeedVO>() {
                 @Override
                 public void onResponse(Call<FeedVO> call, Response<FeedVO> response) {
                     if(response.isSuccessful()) {

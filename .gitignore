@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+APIKey.java
+./app/src/main/java/org/algosketch/eum/APIKey.java
