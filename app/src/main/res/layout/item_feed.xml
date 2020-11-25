@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_marginVertical="8dp"
+    android:padding="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="field1 : 3.3v"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#FFFF00"/>
 
     <TextView
@@ -23,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/field1"
         tools:text="field2 : 2.3v"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#FFFF00"/>
 
     <TextView
@@ -33,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/field2"
         tools:text="field3 : 1.3v"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#FFFF00"/>
 
     <TextView
@@ -43,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="id : 123"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#FFFF00"/>
 
     <TextView
@@ -53,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/field2"
         tools:text="11.26. 17:00"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#FFFF00"/>
 
 

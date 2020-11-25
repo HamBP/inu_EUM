@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FCMRecyclerAdapter extends RecyclerView.Adapter<FCMRecyclerAdapter.FeedHolder> {
-    List<FeedVO.Feed> feeds = new ArrayList<>();
-    List<String> fieldNames = new ArrayList<>();
+    List<FeedVO.Feed> feeds = null;
+    List<String> fieldNames = null;
 
     FCMRecyclerAdapter(List<FeedVO.Feed> feeds, ArrayList<String> fieldNames) {
         this.feeds = feeds;

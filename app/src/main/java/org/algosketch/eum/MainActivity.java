@@ -1,6 +1,8 @@
 package org.algosketch.eum;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import retrofit2.Call;
@@ -11,17 +13,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.algosketch.eum.RetrofitFactory.create;
 
 public class MainActivity extends Activity {
     private static String API_KEY = "2A92X87A2NJF3ZPD"; // query ... api key ... &result=2;
