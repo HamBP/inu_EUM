@@ -9,5 +9,5 @@ public interface RetrofitService {
     @GET("feeds.json")
     Call<FeedVO> getFeeds(
             @Query("api_key") String apiKey,
-            @Query("result") long result);
+            @Query("results") long results);
 }

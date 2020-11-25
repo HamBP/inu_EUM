@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
     private class UpdateOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            retrofitService.getFeeds(API_KEY, 2).enqueue(new Callback<FeedVO>() {
+            retrofitService.getFeeds(API_KEY, 20).enqueue(new Callback<FeedVO>() {
                 @Override
                 public void onResponse(Call<FeedVO> call, Response<FeedVO> response) {
                     if(response.isSuccessful()) {
@@ -63,9 +63,7 @@ public class MainActivity extends Activity {
                         fieldNames.add(feeds.channel.field1);
                         fieldNames.add(feeds.channel.field2);
                         fieldNames.add(feeds.channel.field3);
-                        int numOfData = feeds.feeds.size();
-                        List<FeedVO.Feed> cutFeeds = feeds.feeds.subList(numOfData-20, numOfData);
-                        FCMRecyclerAdapter adapter = new FCMRecyclerAdapter(cutFeeds, fieldNames);
+                        FCMRecyclerAdapter adapter = new FCMRecyclerAdapter(feeds.feeds, fieldNames);
                         recyclerView.setAdapter(adapter);
                         recyclerView.scrollToPosition(20-1);
                     } else {
