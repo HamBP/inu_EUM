@@ -64,9 +64,10 @@ public class MainActivity extends Activity {
                         fieldNames.add(feeds.channel.field2);
                         fieldNames.add(feeds.channel.field3);
                         int numOfData = feeds.feeds.size();
-                        List<FeedVO.Feed> cutFeeds = feeds.feeds.subList(numOfData-20, numOfData-1);
+                        List<FeedVO.Feed> cutFeeds = feeds.feeds.subList(numOfData-20, numOfData);
                         FCMRecyclerAdapter adapter = new FCMRecyclerAdapter(cutFeeds, fieldNames);
                         recyclerView.setAdapter(adapter);
+                        recyclerView.scrollToPosition(20-1);
                     } else {
                         Log.d("algod : ", "fail");
                     }
