@@ -11,8 +11,6 @@ public class FeedVO {
         public String field1;
         public String field2;
         public String field3;
-        public String created_at;
-        public String updated_at;
         public String last_entry_id;
     }
 

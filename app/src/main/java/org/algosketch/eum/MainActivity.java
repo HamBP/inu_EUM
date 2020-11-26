@@ -54,11 +54,9 @@ public class MainActivity extends Activity {
                         Log.i("algoi : ", "success");
                         feeds = response.body();
 
-                        // 제목, 업데이트 시각 표시
+                        // 제목 표시
                         TextView titleView = findViewById(R.id.title_view);
-                        TextView lastUpdateView = findViewById(R.id.last_update_view);
                         titleView.setText(feeds.channel.name);
-                        lastUpdateView.setText(feeds.channel.updated_at);
                         // 리스트
                         ArrayList<String> fieldNames = new ArrayList<>();
                         fieldNames.add(feeds.channel.field1);
