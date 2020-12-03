@@ -30,8 +30,8 @@ public class FCMRecyclerAdapter extends RecyclerView.Adapter<FCMRecyclerAdapter.
     @Override
     public void onBindViewHolder(@NonNull FeedHolder holder, int position) {
         holder.field1.setText(fieldNames.get(0) + " : " + feeds.get(position).field1 + "V");
-        holder.field2.setText(fieldNames.get(1) + " : " + feeds.get(position).field2);
-        holder.field3.setText(fieldNames.get(2) + " : " + feeds.get(position).field3 + "W");
+        holder.field2.setText(fieldNames.get(1) + " : " + feeds.get(position).field2 + "mA");
+        holder.field3.setText(fieldNames.get(2) + " : " + feeds.get(position).field3 + "mW");
         holder.dataID.setText("id : " + feeds.get(position).entry_id);
         holder.date.setText("update : " + parseLocaleTime(feeds.get(position).created_at));
     }

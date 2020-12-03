@@ -15,11 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-// 준영아 API 관련 문서 만들어라
 
 public class MainActivity extends Activity {
     FeedVO feeds;
@@ -67,6 +66,7 @@ public class MainActivity extends Activity {
                         recyclerView.scrollToPosition(20-1);
                     } else {
                         Log.d("algod : ", "fail");
+                        Toast.makeText(MainActivity.this, "서버 연결 실패", Toast.LENGTH_SHORT).show();
                     }
                 }
 
